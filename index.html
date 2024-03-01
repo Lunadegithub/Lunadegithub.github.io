@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>数据可视化</title>
+        <link rel="stylesheet" href="css/index.css" />
+    </head>
+    <body>
+     <!-- 头部盒子 -->
+     <header>
+        <h1>净芙哲学TOP5销量</h1>
+        <div class="showTime"></div>
+        <script>
+            var t = null;
+            t = setTimeout(time, 1000); //开始运行
+            function time() {
+              clearTimeout(t); //清除定时器
+              dt = new Date();
+              var y = dt.getFullYear();
+              var mt = dt.getMonth() + 1;
+              var day = dt.getDate();
+              var h = dt.getHours(); //获取时
+              var m = dt.getMinutes(); //获取分
+              var s = dt.getSeconds(); //获取秒
+              document.querySelector(".showTime").innerHTML =
+                "当前时间：" +
+                y +
+                "年" +
+                mt +
+                "月" +
+                day +
+                "日-" +
+                h +
+                "时" +
+                m +
+                "分" +
+                s +
+                "秒";
+              t = setTimeout(time, 1000); //设定定时器，循环运行
+            }
+          </script>
+     </header>
+
+     <!-- 页面主体超大盒子 -->
+     <section class="mainbox">
+        <!-- 左侧盒子，排列三个同等大小的盒子 -->
+        <div class="column">
+            <div class="panel bar">
+                <h2>产品销量柱形图</h2>
+                <div class="chart">图表</div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel line">
+                <h2>数据折线图<a href="javacript:;">2023</a><a href="javacript:;">2024</a></h2>
+                <div class="chart">图表</div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel pie">
+                <h2>年龄分布饼图</h2>
+                <div class="chart">图表</div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+        <!-- 中间盒子 嵌套两个小盒子 -->
+        <div class="column">
+            <!-- 第一个小盒子no模块制作 -->
+            <div class="no">
+                <!-- 再次分成两个盒子，上面存放数字，下面文字说明 -->
+                <div class="no-hd">
+                    <ul>
+                        <li>10000</li>
+                        <li>11000</li>
+                    </ul>
+                </div>
+                <div class="no-bd">
+                    <ul>
+                        <li>人参水乳销量</li>
+                        <li>双生双补面霜销量</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 地图盒子 -->
+            <div class="map">
+                <div class="map1"></div>
+                <div class="map2"></div>
+                <div class="map3"></div>
+                <div class="chart">地图模块</div>
+            </div>
+        </div>
+        <!-- 右侧盒子，排列三个同等大小的盒子 -->
+        <div class="column">
+            <div class="panel bar2">
+                <h2>产品分类销量柱形图</h2>
+                <div class="chart">图表</div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel line2">
+                <h2>转发量折线图</h2>
+                <div class="chart">图表</div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel pie2">
+                <h2>地区分布饼图</h2>
+                <div class="chart">图表</div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+     </section>
+     <script src="js/flexible.js"></script>
+     <script src="js/echarts.min.js"></script>
+     <script src="js/jquery.js"></script>
+     <script src="js/index.js"></script>
+     <script src="js/china.js"></script>
+
+    </body>
+</html>
